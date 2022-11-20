@@ -21,3 +21,20 @@ This regular expression was created to extract username, hostname and directory 
 
 _(iTerm2 is popular terminal emulator for Apple Mac computers.)_
 
+## Use
+
+This script uses the `unittest` library built into Python; so no additional installations are required beyond a Python3 installation.
+
+Simply start `python3`, giving the name of this script; the output should be similar to the following:
+
+```
+$ python3 test_shell_prompt_re.py
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
+```
+
+If you had other prompts that do not match on this regex; provide them and we'll try to integrate them into the regex if it doesn't make the regex too crazy.
+
