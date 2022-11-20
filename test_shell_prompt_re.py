@@ -6,6 +6,19 @@ from dataclasses import dataclass
 
 SHELL_RE = re.compile(r'^\[?(\w+)@([\w\d-]+)[:\s]([\w~/ ]*[\w~/]+)\]?(?:\s%|\s#|\$|#)\s')
 
+# Explanation:
+#   ^                   - Start at beginnning of line
+#   \[?                 - Accept an opening square bracket if one is present
+#   (\w+)               - Capture the username
+#   @                   - A "at" symbol is required to separate the username and hostname
+#   ([\w\d-]+)          - Capture the hostname
+#   [:\s]               - Accept either a space or a colon as a delimiter
+#   ([\w~/ ]*[\w~/]+)   - Capture the directory, which may well contain spaces
+#   \]?                 - Accept a closing square bracket if one is present
+#   (?:\s%|\s#|\$|#)    - Accept any of the endings presented by the different shells
+#   \s                  - Match on a final space at the end of the prompt
+
+
 @dataclass
 class TestData:
     prompt: str
