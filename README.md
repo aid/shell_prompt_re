@@ -20,6 +20,8 @@ This regular expression was created to extract username, hostname and directory 
 
 _(iTerm2 is popular terminal emulator for Apple Mac computers.)_
 
+An explanation of the regex is included in the test script within this repository.
+
 ## Testing
 
 This script uses the `unittest` library built into Python; so no additional installations are required beyond a Python3 installation.
@@ -39,13 +41,13 @@ If you had other prompts that do not match on this regex; provide them and we'll
 
 ## Use
 
-This script was intented to be used within iTerm Triggers functionality.
+This script was intented to be used within [iTerm2](https://iterm2.com) Triggers functionality.
 
-These can be set by going to iTerm's Preferences -> Profiles -> _Selected profile, eg. Default_ -> Advanced Triggers -> Edit and setting as follows:
+These can be set by going to iTerm's Preferences -> Profiles -> _profile, eg. Default_ -> Advanced Triggers -> Edit and setting two Triggers, as follows:
 
 |Regular Expression|Action|Parameters|Instant|Enabled|
 |------------------|------|----------|-------|-------|
 |_Insert above regex_|Report User & Host|\1@\2|Ticked|Ticked|
-|_iInsert above regex_|Report Directory|\3|Ticked|Ticked|
+|_Insert above regex_|Report Directory|\3|Ticked|Ticked|
 
 Note that the above needs to be repeated for any profiles within which you want these elements to be extracted.
