@@ -43,8 +43,9 @@ This script was intented to be used within iTerm Triggers functionality.
 
 These can be set by going to iTerm's Preferences -> Profiles -> _Selected profile, eg. Default_ -> Advanced Triggers -> Edit and setting as follows:
 
-|Regular Expression|Action|Paramters|Instant|Enabled|
-|<insert above regex>|Report User & Host|\1@\2|Ticked|Ticked|
-|<insert above regex>|Report Directory|\3|Ticked|Ticked|
+|Regular Expression|Action|Parameters|Instant|Enabled|
+|------------------|------|----------|-------|-------|
+|_Insert above regex_|Report User & Host|\1@\2|Ticked|Ticked|
+|_iInsert above regex_|Report Directory|\3|Ticked|Ticked|
 
 Note that the above needs to be repeated for any profiles within which you want these elements to be extracted.
