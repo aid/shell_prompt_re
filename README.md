@@ -10,7 +10,6 @@ At the time of writing, the regular expression is,
 ^\[?(\w+)@([\w\d-]+)[:\s]([\w~/ ]*[\w~/]+)\]?(?:\s%|\s#|\$|#)\s
 ```
 
-
 This regular expression includes three captures:
 
 1. Username
@@ -21,7 +20,7 @@ This regular expression was created to extract username, hostname and directory 
 
 _(iTerm2 is popular terminal emulator for Apple Mac computers.)_
 
-## Use
+## Testing
 
 This script uses the `unittest` library built into Python; so no additional installations are required beyond a Python3 installation.
 
@@ -38,3 +37,14 @@ OK
 
 If you had other prompts that do not match on this regex; provide them and we'll try to integrate them into the regex if it doesn't make the regex too crazy.
 
+## Use
+
+This script was intented to be used within iTerm Triggers functionality.
+
+These can be set by going to iTerm's Preferences -> Profiles -> _Selected profile, eg. Default_ -> Advanced Triggers -> Edit and setting as follows:
+
+|Regular Expression|Action|Paramters|Instant|Enabled|
+|<insert above regex>|Report User & Host|\1@\2|Ticked|Ticked|
+|<insert above regex>|Report Directory|\3|Ticked|Ticked|
+
+Note that the above needs to be repeated for any profiles within which you want these elements to be extracted.
